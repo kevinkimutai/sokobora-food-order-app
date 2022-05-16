@@ -1,0 +1,110 @@
+.navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem 4rem;
+}
+.navbar__logo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.navbar__logo img {
+  width: 4rem;
+  object-fit: contain;
+  margin-right: 1rem;
+  cursor: pointer;
+}
+.navbar__logo p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: capitalize;
+  cursor: pointer;
+}
+.navbar__menu {
+  display: flex;
+  align-items: center;
+}
+.navbar__menu-links a {
+  font-size: 1.3rem;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-right: 2rem;
+}
+.navbar__menu-right {
+  display: flex;
+  align-items: center;
+}
+.navbar__shopping-cart {
+  position: relative;
+  margin-right: 1.5rem;
+}
+.navbar__shopping-cart span {
+  position: absolute;
+  top: -0.5rem;
+  right: -0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--cart-bg);
+  height: 1.3rem;
+  width: 1.3rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  color: #fff;
+}
+.navbar__shopping-cart-icon {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+
+.navbar__menu-right__avatar-container {
+  position: relative;
+}
+.navbar__menu-right__avatar-container img {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  object-fit: contain;
+  cursor: pointer;
+}
+.navbar__menu-right__avatar-container div {
+  position: absolute;
+  top: 4rem;
+  right: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1rem;
+  min-width: 20rem;
+  background: rgb(255, 250, 250);
+  border-radius: 1rem;
+  box-shadow: 1rem 1rem 1.5rem var(--primary-color);
+}
+.navbar__menu-right__avatar-container div a {
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem;
+  flex-wrap: nowrap;
+  color: var(--text-color);
+  padding: 1rem 2rem;
+  margin-bottom: 0.5rem;
+}
+.navbar__menu-right__avatar-container div a:last-child {
+  margin-bottom: 0;
+  background: var(--heading-color);
+  color: rgb(255, 250, 250);
+  text-align: center;
+}
+.navbar__avatar-container__icon {
+  font-size: 1.3rem;
+  margin-left: 0.7rem;
+}
+
+@media screen and (max-width: 768px) {
+  .navbar__menu-links {
+    display: none;
+  }
+}
