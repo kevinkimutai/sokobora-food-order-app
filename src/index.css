@@ -5,4 +5,9 @@
   --text-color: #515151;
   --heading-color: #2e2e2e;
   --font-family: "Poppins", sans-serif;
+
+  --dark-orange-1: #f94d00;
+  --light-orange-1: #ff7518;
+  --light-orange-2: hsla(20, 100%, 63%, 0.4);
+  --light-orange-3: hsla(20, 100%, 63%, 0.6);
 }

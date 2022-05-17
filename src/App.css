@@ -15,7 +15,6 @@ a {
   text-decoration: none;
 }
 .main-section {
-  padding-top: 30vh;
   min-height: 100vh;
   background: var(--primary-color);
 }

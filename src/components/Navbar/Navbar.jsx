@@ -8,6 +8,8 @@ import {
   signInWithPopup,
   GoogleAuthProvider,
 } from "firebase/auth";
+import { Link } from "react-router-dom";
+
 import { app } from "../../firebase.config";
 
 import { userSliceActions } from "../../app/userSlice";
@@ -85,8 +87,12 @@ const Navbar = () => {
   );
 
   return (
-    <div className="navbar">
+    <header className="navbar">
       <div className="navbar__logo">
+        {/* <Link to={"/"}>
+          
+        </Link>
+        */}
         <img src="/images/logo.png" alt="sokobora" />
         <p>sokobora</p>
       </div>
@@ -112,21 +118,24 @@ const Navbar = () => {
             />
             {showMenu && (
               <div>
-                <a href="#test">
-                  New Item <MdAdd className="navbar__avatar-container__icon" />
-                </a>
+                {user.email === "keinkimutai62@gmail.com" && (
+                  <a href="#test">
+                    New Item{" "}
+                    <MdAdd className="navbar__avatar-container__icon" />
+                  </a>
+                )}
 
                 {menuLinks}
 
-                <a onClick={logoutHandler}>
+                <button onClick={logoutHandler}>
                   Logout <MdLogout className="navbar__avatar-container__icon" />
-                </a>
+                </button>
               </div>
             )}
           </div>
         </div>
       </div>
-    </div>
+    </header>
   );
 };
 

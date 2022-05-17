@@ -6,6 +6,7 @@
   justify-content: space-between;
   align-items: center;
   padding: 2rem 4rem;
+  z-index: 999;
 }
 .navbar__logo {
   display: flex;
@@ -92,11 +93,19 @@
   padding: 1rem 2rem;
   margin-bottom: 0.5rem;
 }
-.navbar__menu-right__avatar-container div a:last-child {
+.navbar__menu-right__avatar-container div button {
   margin-bottom: 0;
   background: var(--heading-color);
   color: rgb(255, 250, 250);
   text-align: center;
+  cursor: pointer;
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .navbar__avatar-container__icon {
   font-size: 1.3rem;
