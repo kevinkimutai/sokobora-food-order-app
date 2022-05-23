@@ -57,12 +57,14 @@ const MainSection = () => {
           {foodsData.map((food, index) => (
             <div className="main__food-item" key={index}>
               <img src={`/images/${food.image}`} alt="food 1" />
-              <p className="food-item__category">{food.category}</p>
-              <p className="food-item__name">{food.name}</p>
-              <p className="food-item__price">
-                <span>kshs</span>
-                {food.price}
-              </p>
+              <div>
+                <p className="food-item__category">{food.category}</p>
+                <p className="food-item__name">{food.name}</p>
+                <p className="food-item__price">
+                  <span>kshs</span>
+                  {food.price}
+                </p>
+              </div>
             </div>
           ))}
         </div>

@@ -10,4 +10,8 @@
   --light-orange-1: #ff7518;
   --light-orange-2: hsla(20, 100%, 63%, 0.4);
   --light-orange-3: hsla(20, 100%, 63%, 0.6);
+
+  --light-gray-1: #c0c0c0;
+  --light-gray-2: #b2beb5;
+  --dark-gray-1: #8c92ac;
 }

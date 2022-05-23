@@ -89,11 +89,9 @@ const Navbar = () => {
   return (
     <header className="navbar">
       <div className="navbar__logo">
-        {/* <Link to={"/"}>
-          
+        <Link to={"/"}>
+          <img src="/images/logo.png" alt="sokobora" />
         </Link>
-        */}
-        <img src="/images/logo.png" alt="sokobora" />
         <p>sokobora</p>
       </div>
       <div className="navbar__menu">
@@ -118,11 +116,16 @@ const Navbar = () => {
             />
             {showMenu && (
               <div>
-                {user.email === "keinkimutai62@gmail.com" && (
-                  <a href="#test">
-                    New Item{" "}
+                {user.email === "kevinkimutai62@gmail.com" && (
+                  <Link
+                    to="/createItem"
+                    onClick={() => {
+                      setShowMenu(false);
+                    }}
+                  >
+                    New Item
                     <MdAdd className="navbar__avatar-container__icon" />
-                  </a>
+                  </Link>
                 )}
 
                 {menuLinks}
