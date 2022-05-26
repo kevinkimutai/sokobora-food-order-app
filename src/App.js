@@ -1,13 +1,36 @@
-import React from "react";
+import { React, useEffect } from "react";
 
 import { Route, Routes } from "react-router-dom";
+
+import { useDispatch, useSelector } from "react-redux";
 
 import "./App.css";
 import { Navbar } from "./components";
 import HomePage from "./pages/HomePage";
 import CreateItemPage from "./pages/CreateItemPage";
+import { getAllFoodItems } from "./utils/firebaseFunctions";
+import { foodItemActions } from "./app/foodItemsSlice";
 
 function App() {
+  const dispatch = useDispatch();
+  const items = useSelector((state) => state.foodItems.foodItems);
+
+  const fetchItems = async () => {
+    try {
+      await getAllFoodItems().then((data) => {
+        dispatch(foodItemActions.save(data));
+      });
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
+  useEffect(() => {
+    fetchItems();
+
+    return fetchItems;
+  }, []);
+
   return (
     <>
       <Navbar />

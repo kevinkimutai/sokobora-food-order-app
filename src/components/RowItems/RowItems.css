@@ -1,0 +1,84 @@
+.row {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  padding: 6rem 0;
+}
+.row.overflow {
+  overflow-x: scroll;
+  scroll-behavior: smooth;
+}
+.row.overflow::-webkit-scrollbar {
+  display: none;
+}
+.row.not-overflow {
+  flex-wrap: wrap;
+}
+.item {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 25rem;
+  min-height: 10rem;
+  margin-right: 2rem;
+  box-shadow: 0.2rem 0.3rem 0.5rem rgb(223, 223, 223, 0.6),
+    -0.2rem -0.3rem 0.5rem rgb(223, 223, 223, 0.6);
+  border-radius: 1rem;
+  padding: 1rem;
+}
+.item:hover {
+  background: rgb(223, 223, 223, 0.6);
+}
+.item-image {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.item-image img {
+  margin-top: -5rem;
+  max-width: 15rem;
+  max-height: 10rem;
+  object-fit: contain;
+  margin-right: auto;
+  cursor: pointer;
+}
+.item-image div {
+  height: 3rem;
+  width: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--dark-orange-1);
+  font-size: 1.7rem;
+  color: var(--primary-color);
+  border-radius: 50%;
+  cursor: pointer;
+}
+.item-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.item-details h2 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+  margin-bottom: 0.3rem;
+}
+.item-details h3 {
+  font-size: 1rem;
+  color: var(--text-color);
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 1rem;
+}
+.item-details p {
+  color: var(--text-color);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+.item-details p span {
+  font-size: 1.2rem;
+  color: var(--dark-orange-1);
+  margin-right: 0.2rem;
+}

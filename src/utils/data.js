@@ -31,12 +31,22 @@ export const categories = [
   },
   {
     id: 7,
-    name: "Deserts",
-    urlParamName: "deserts",
+    name: "Rice",
+    urlParamName: "rice",
   },
   {
     id: 8,
     name: "Soft Drinks",
     urlParamName: "drinks",
+  },
+  {
+    id: 9,
+    name: "Ice Cream",
+    urlParamName: "ice cream",
+  },
+  {
+    id: 10,
+    name: "Fruits",
+    urlParamName: "fruits",
   },
 ];

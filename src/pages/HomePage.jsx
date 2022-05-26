@@ -1,8 +1,13 @@
 import React from "react";
-import { MainSection } from "../components";
+import { FoodSection, MainSection } from "../components";
 
 const HomePage = () => {
-  return <MainSection />;
+  return (
+    <>
+      <MainSection />
+      <FoodSection />
+    </>
+  );
 };
 
 export default HomePage;

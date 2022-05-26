@@ -1,0 +1,49 @@
+.food-section {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.food-section__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+.food-section__title h1 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+.food-section__title div {
+  height: 0.3rem;
+  width: 40%;
+  background: var(--light-orange-1);
+  border-radius: 1rem;
+}
+.food-section__buttons button {
+  padding: 1rem 1.5rem;
+  color: var(--primary-color);
+  margin: 1rem;
+  border: none;
+  outline: none;
+  background: var(--light-orange-1);
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.4s;
+}
+.food-section__buttons button:hover {
+  background: var(--dark-orange-1);
+}
+
+.buttons__scroll-icon {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+@media screen and (max-width: 648px) {
+  .food-section__buttons {
+    display: none;
+  }
+}

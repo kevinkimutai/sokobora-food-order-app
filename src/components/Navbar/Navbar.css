@@ -5,7 +5,8 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 2rem 4rem;
+  padding: 0 4rem;
+  background: var(--primary-color);
   z-index: 999;
 }
 .navbar__logo {
