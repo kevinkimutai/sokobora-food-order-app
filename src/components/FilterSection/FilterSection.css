@@ -1,0 +1,77 @@
+.filter-section {
+  padding-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+.filter-section__header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.filter-section__buttons {
+  overflow-x: scroll;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.filter-section__button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 8rem;
+  background: rgb(245, 244, 244);
+  border-radius: 0.5rem;
+  color: var(--heading-color);
+  cursor: pointer;
+  padding: 1rem;
+  margin: 1rem;
+  box-shadow: 0.3rem 0.8rem 0.8rem rgb(197, 197, 197);
+}
+.filter-section__button:hover {
+  background: var(--cart-bg);
+  color: var(--primary-color);
+}
+.filter-section__button:hover div {
+  background: var(--primary-color);
+}
+.filter-section__button:hover .filter-section__button-icon {
+  color: var(--heading-color);
+}
+.filter-section__button.active {
+  background: var(--cart-bg);
+  transform: scale(1.12);
+  color: var(--primary-color);
+}
+.filter-section__button div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: var(--cart-bg);
+  height: 3rem;
+  width: 3rem;
+  margin-bottom: 1rem;
+}
+.filter-section__button.active div {
+  background: var(--primary-color);
+}
+.filter-section__button-icon {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+.filter-section__button.active .filter-section__button-icon {
+  color: var(--heading-color);
+}
+.filter-section__button p {
+  font-size: 1.1rem;
+  font-weight: 500;
+}
+.filter-secion__row-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

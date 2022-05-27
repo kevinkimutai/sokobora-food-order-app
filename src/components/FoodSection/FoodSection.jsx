@@ -5,7 +5,7 @@ import "./FoodSection.css";
 import { MdChevronLeft, MdChevronRight } from "react-icons/md";
 
 import { motion } from "framer-motion";
-import { RowItems } from "..";
+import { HeadingTitle, RowItems } from "..";
 const FoodSection = () => {
   const items = useSelector((state) => state.foodItems.foodItems);
   const scrollRef = useRef();
@@ -19,10 +19,7 @@ const FoodSection = () => {
   return (
     <section className="food-section">
       <div className="food-section__header">
-        <div className="food-section__title">
-          <h1>our fresh & healthy fruits</h1>
-          <div />
-        </div>
+        <HeadingTitle title={"our fresh & healthy fruits"} />
         <div className="food-section__buttons">
           <motion.button
             whileTap={{ scale: 0.65 }}

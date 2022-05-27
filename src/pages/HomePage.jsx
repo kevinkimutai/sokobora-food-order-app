@@ -1,11 +1,12 @@
 import React from "react";
-import { FoodSection, MainSection } from "../components";
+import { FilterSection, FoodSection, MainSection } from "../components";
 
 const HomePage = () => {
   return (
     <>
       <MainSection />
       <FoodSection />
+      <FilterSection />
     </>
   );
 };

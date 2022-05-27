@@ -1,0 +1,12 @@
+.heading-title h1 {
+  font-size: 2rem;
+  text-transform: capitalize;
+  font-weight: 600;
+  color: var(--heading-color);
+}
+.heading-title div {
+  height: 0.3rem;
+  width: 40%;
+  background: var(--light-orange-1);
+  border-radius: 1rem;
+}
