@@ -10,7 +10,7 @@ import { categories } from "../../utils/data";
 import "./FilterSection.css";
 
 const FilterSection = () => {
-  const [category, setCategory] = useState();
+  const [category, setCategory] = useState("chicken");
   const items = useSelector((state) => state.foodItems.foodItems);
 
   return (

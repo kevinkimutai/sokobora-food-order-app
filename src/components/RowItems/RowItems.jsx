@@ -1,16 +1,47 @@
 import React from "react";
+
+import { useDispatch } from "react-redux";
+
 import { MdShoppingBasket } from "react-icons/md";
 import { motion } from "framer-motion";
 
 import "./RowItems.css";
+import { cartActions } from "../../app/cartItemsReducer";
 
 const RowItems = React.forwardRef(({ flag, items }, ref) => {
+  const dispatch = useDispatch();
+
+  const addToCartHandler = (item) => {
+    //set cart item to local Storage
+    let data = [];
+    data = JSON.parse(localStorage.getItem("cart")) || [];
+
+    const matched = data.filter((items) => items.name === item.name);
+    console.log(matched);
+
+    if (matched.length > 0) {
+      localStorage.setItem("cart", JSON.stringify(data));
+    } else {
+      data.push(item);
+      localStorage.setItem("cart", JSON.stringify(data));
+    }
+
+    //set quantity to localStorage
+    const updatedData = JSON.parse(localStorage.getItem("cart"));
+    const qty = updatedData.length;
+
+    localStorage.setItem("quantity", JSON.stringify(qty));
+
+    //set data into redux store
+    dispatch(cartActions.addToCart(item));
+  };
+
   return (
     <div
       ref={ref}
       className={`row ${flag === "true" ? "overflow" : "not-overflow"}`}
     >
-      {items.length > 0 ? (
+      {items && items.length > 0 ? (
         items?.map((item, indx) => (
           <div className="item" key={indx}>
             <div className="item-image">
@@ -19,9 +50,14 @@ const RowItems = React.forwardRef(({ flag, items }, ref) => {
                 src={item?.imageUrl}
                 alt=""
               />
-              <div>
+              <motion.div
+                whileTap={{ scale: 0.75 }}
+                onClick={() => {
+                  addToCartHandler(item);
+                }}
+              >
                 <MdShoppingBasket className="item-image__icon" />
-              </div>
+              </motion.div>
             </div>
 
             <div className="item-details">
