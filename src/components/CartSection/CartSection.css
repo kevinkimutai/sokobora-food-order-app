@@ -44,9 +44,13 @@
 }
 .cart-section__items {
   display: flex;
-  height: 60%;
+  height: 55%;
   flex-direction: column;
   padding: 2rem;
+  overflow-y: scroll;
+}
+.cart-section__items::-webkit-scrollbar {
+  display: none;
 }
 .cart-section__item {
   display: flex;
@@ -56,6 +60,8 @@
   background: var(--text-color);
   border-radius: 1rem;
   margin-bottom: 1rem;
+  height: 7rem;
+  min-height: 7rem;
 }
 
 .cart-section__item-details {
@@ -66,6 +72,7 @@
 .cart-section__item-details img {
   width: 8rem;
   object-fit: contain;
+  margin-right: 1rem;
 }
 .cart-section__item-details div p {
   color: var(--primary-color);
@@ -87,11 +94,12 @@
   font-size: 1.2rem;
   color: var(--primary-color);
   margin: 0 1rem;
+  cursor: pointer;
 }
 .total-container {
   display: flex;
   flex-direction: column;
-  height: 40%;
+  height: 45%;
   padding: 2rem;
   background: var(--text-color);
   border-radius: 4rem 4rem 0 0;
@@ -119,7 +127,6 @@
 }
 .total {
   display: flex;
-  justify-content: space-between;
   flex-direction: column;
   height: 100%;
   border-top: 0.1rem solid var(--light-gray-1);
@@ -129,6 +136,7 @@
   justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
+  margin-bottom: 2rem;
 }
 .total__details h1 {
   text-transform: uppercase;
@@ -150,4 +158,44 @@
   color: var(--primary-color);
   text-transform: uppercase;
   cursor: pointer;
+}
+.cart-section__image {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.cart-section__image img {
+  width: 100%;
+  object-fit: contain;
+  margin-bottom: 1rem;
+}
+.cart-section__image p {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--text-color);
+  text-align: center;
+}
+
+@media screen and (max-width: 1100px) {
+  .cart-section {
+    width: 35vw;
+  }
+}
+@media screen and (max-width: 850px) {
+  .cart-section {
+    width: 45vw;
+  }
+}
+@media screen and (max-width: 670px) {
+  .cart-section {
+    width: 65vw;
+  }
+}
+@media screen and (max-width: 550px) {
+  .cart-section {
+    width: 100vw;
+  }
 }

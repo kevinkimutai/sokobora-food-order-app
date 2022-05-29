@@ -17,7 +17,6 @@ const RowItems = React.forwardRef(({ flag, items }, ref) => {
     data = JSON.parse(localStorage.getItem("cart")) || [];
 
     const matched = data.filter((items) => items.name === item.name);
-    console.log(matched);
 
     if (matched.length > 0) {
       localStorage.setItem("cart", JSON.stringify(data));

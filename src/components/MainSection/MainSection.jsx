@@ -1,35 +1,40 @@
-import React from "react";
+import { motion } from "framer-motion";
+import { React, useEffect, useState } from "react";
+
+import { useSelector } from "react-redux";
 
 import "./MainSection.css";
 
-const foodsData = [
-  {
-    image: "i1.png",
-    category: "ice cream",
-    name: "chocolate moose",
-    price: 350,
-  },
-  {
-    image: "f3.png",
-    category: "vegetables",
-    name: "avocado",
-    price: 350,
-  },
-  {
-    image: "fi5.png",
-    category: "snawitch",
-    name: "ham",
-    price: 350,
-  },
-  {
-    image: "r3.png",
-    category: "fruits",
-    name: "strawberrys",
-    price: 350,
-  },
-];
-
 const MainSection = () => {
+  const [randomFood, setRandomFood] = useState();
+  const items = useSelector((state) => state.foodItems.foodItems);
+
+  const getRandomFoodItems = (arr) => {
+    if (arr) {
+      let foodItems = [];
+      for (let i = 0; i < 4; i++) {
+        const randomIndex = Math.floor(Math.random() * arr?.length);
+        const item = arr[randomIndex];
+        if (foodItems.find((food) => food.name === item.name)) {
+          const randomIndex = Math.floor(Math.random() * arr?.length);
+          const uniqueItem = arr[randomIndex];
+          foodItems.push(uniqueItem);
+        } else {
+          foodItems.push(item);
+        }
+      }
+      setRandomFood(foodItems);
+    } else {
+      return;
+    }
+  };
+
+  useEffect(() => {
+    getRandomFoodItems(items);
+
+    return getRandomFoodItems;
+  }, [items]);
+
   return (
     <div className="main">
       <div className="main__title-container">
@@ -54,19 +59,24 @@ const MainSection = () => {
           <img src="/images/heroBg.png" alt=""></img>
         </div>
         <div className="main__foods-container">
-          {foodsData.map((food, index) => (
-            <div className="main__food-item" key={index}>
-              <img src={`/images/${food.image}`} alt="food 1" />
-              <div>
-                <p className="food-item__category">{food.category}</p>
-                <p className="food-item__name">{food.name}</p>
-                <p className="food-item__price">
-                  <span>kshs</span>
-                  {food.price}
-                </p>
+          {randomFood &&
+            randomFood?.map((food, index) => (
+              <div className="main__food-item" key={index}>
+                <motion.img
+                  whileHover={{ scale: 1.2 }}
+                  src={food.imageUrl}
+                  alt=""
+                />
+                <div>
+                  <p className="food-item__category">{food.category}</p>
+                  <p className="food-item__name">{food.name}</p>
+                  <p className="food-item__price">
+                    <span>$</span>
+                    {food.price}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            ))}
         </div>
       </div>
     </div>
