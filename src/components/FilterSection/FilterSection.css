@@ -16,6 +16,9 @@
   justify-content: center;
   align-items: center;
 }
+.filter-section__buttons::-webkit-scrollbar {
+  display: none;
+}
 .filter-section__button {
   display: flex;
   flex-direction: column;
