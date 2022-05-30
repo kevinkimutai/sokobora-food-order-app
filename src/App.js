@@ -2,7 +2,7 @@ import { React, useEffect } from "react";
 
 import { Route, Routes } from "react-router-dom";
 
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 
 import "./App.css";
 import { Navbar } from "./components";
