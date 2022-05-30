@@ -13,7 +13,6 @@ import { foodItemActions } from "./app/foodItemsSlice";
 
 function App() {
   const dispatch = useDispatch();
-  const items = useSelector((state) => state.foodItems.foodItems);
 
   const fetchItems = async () => {
     try {
@@ -29,7 +28,7 @@ function App() {
     fetchItems();
 
     return fetchItems;
-  }, []);
+  });
 
   return (
     <>
